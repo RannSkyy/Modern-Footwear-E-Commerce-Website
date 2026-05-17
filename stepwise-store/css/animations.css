@@ -1,0 +1,118 @@
+/* ===========================
+   STEPWISE — ANIMATIONS
+   =========================== */
+
+@keyframes floatShoe {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  50% { transform: translateY(-18px) rotate(5deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.08); }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes slideProgress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.85); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Product card entrance */
+.product-card {
+  animation: scaleIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+/* Hover shine on product cards */
+.product-img::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; right: -100%; bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 30%,
+    rgba(255,255,255,0.06) 50%,
+    transparent 70%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.6s;
+  pointer-events: none;
+}
+.product-card:hover .product-img::after {
+  left: 200%;
+}
+
+/* Stat number shimmer */
+.stat-num {
+  background: linear-gradient(90deg, var(--c-accent), var(--c-accent2), var(--c-accent));
+  background-size: 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* About card float */
+.main-card { animation: floatShoe 6s ease-in-out infinite; }
+.accent-card { animation: floatShoe 6s ease-in-out infinite; animation-delay: -3s; }
+
+/* Ribbon pulse on badge */
+.product-badge {
+  animation: none;
+}
+.product-card:hover .product-badge {
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+/* Nav link ripple */
+.nav-links a { overflow: hidden; }
+
+/* Page transitions */
+.page-transition {
+  animation: fadeIn 0.4s ease;
+}

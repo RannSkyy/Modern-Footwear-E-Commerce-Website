@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STEPWISE — Premium Footwear</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">STEPWISE</div>
+    <ul class="nav-links">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#collection">Koleksi</a></li>
+      <li><a href="#featured">Unggulan</a></li>
+      <li><a href="#about">Tentang</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn-icon" onclick="toggleSearch()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <button class="btn-icon" onclick="openCart()">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="btn-menu" id="menuToggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="#home" onclick="toggleMenu()">Beranda</a></li>
+        <li><a href="#collection" onclick="toggleMenu()">Koleksi</a></li>
+        <li><a href="#featured" onclick="toggleMenu()">Unggulan</a></li>
+        <li><a href="#about" onclick="toggleMenu()">Tentang</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HERO SLIDER -->
+  <section class="hero" id="home">
+    <div class="hero-slides" id="heroSlides">
+
+      <div class="hero-slide active" data-slide="0">
+        <div class="slide-bg" style="background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 60%, #16213e 100%)"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow">Koleksi Musim Ini</div>
+          <h1 class="slide-title">Elegansi <em>Tanpa</em><br/>Kompromi</h1>
+          <p class="slide-desc">Sepatu premium untuk mereka yang menghargai keindahan dan kenyamanan dalam setiap langkah.</p>
+          <div class="slide-actions">
+            <a href="#collection" class="btn-primary">Jelajahi Koleksi</a>
+            <a href="#featured" class="btn-ghost">Lihat Unggulan</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="shoe-showcase shoe-1">
+            <div class="shoe-glow"></div>
+            <div class="shoe-emoji">👟</div>
+            <div class="shoe-label">AIR LUXE PRO</div>
+            <div class="shoe-price">Rp 1.850.000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" data-slide="1">
+        <div class="slide-bg" style="background: linear-gradient(135deg, #1a0a00 0%, #2d1b00 60%, #3d2600 100%)"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow">New Arrival</div>
+          <h1 class="slide-title">Klasik yang<br/><em>Abadi</em></h1>
+          <p class="slide-desc">Desain timeless dengan material terbaik, hadir untuk melengkapi gaya hidup Anda yang berkelas.</p>
+          <div class="slide-actions">
+            <a href="#collection" class="btn-primary">Belanja Sekarang</a>
+            <a href="#featured" class="btn-ghost">Lihat Detail</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="shoe-showcase shoe-2">
+            <div class="shoe-glow glow-gold"></div>
+            <div class="shoe-emoji">👞</div>
+            <div class="shoe-label">OXFORD ELITE</div>
+            <div class="shoe-price">Rp 2.200.000</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-slide" data-slide="2">
+        <div class="slide-bg" style="background: linear-gradient(135deg, #0a0a1a 0%, #0d1b2a 60%, #0a1628 100%)"></div>
+        <div class="slide-content">
+          <div class="slide-eyebrow">Limited Edition</div>
+          <h1 class="slide-title">Sporty &<br/><em>Stylish</em></h1>
+          <p class="slide-desc">Performa maksimal bertemu estetika modern. Tampil percaya diri di setiap kesempatan.</p>
+          <div class="slide-actions">
+            <a href="#collection" class="btn-primary">Dapatkan Sekarang</a>
+            <a href="#featured" class="btn-ghost">Selengkapnya</a>
+          </div>
+        </div>
+        <div class="slide-visual">
+          <div class="shoe-showcase shoe-3">
+            <div class="shoe-glow glow-blue"></div>
+            <div class="shoe-emoji">🥿</div>
+            <div class="shoe-label">SPORT LUXE X</div>
+            <div class="shoe-price">Rp 1.650.000</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Slider Controls -->
+    <div class="slide-controls">
+      <button class="slide-prev" onclick="changeSlide(-1)">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+      </button>
+      <div class="slide-dots" id="slideDots">
+        <button class="dot active" onclick="goToSlide(0)"></button>
+        <button class="dot" onclick="goToSlide(1)"></button>
+        <button class="dot" onclick="goToSlide(2)"></button>
+      </div>
+      <button class="slide-next" onclick="changeSlide(1)">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+      </button>
+    </div>
+
+    <div class="slide-progress" id="slideProgress"></div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Premium Quality</span><span class="sep">✦</span>
+      <span>Handcrafted</span><span class="sep">✦</span>
+      <span>Free Ongkir</span><span class="sep">✦</span>
+      <span>Original Brand</span><span class="sep">✦</span>
+      <span>Limited Stock</span><span class="sep">✦</span>
+      <span>Premium Quality</span><span class="sep">✦</span>
+      <span>Handcrafted</span><span class="sep">✦</span>
+      <span>Free Ongkir</span><span class="sep">✦</span>
+      <span>Original Brand</span><span class="sep">✦</span>
+      <span>Limited Stock</span><span class="sep">✦</span>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num" data-target="12000">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Pelanggan Puas</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="250">0</span><span class="stat-suffix">+</span>
+        <span class="stat-label">Model Tersedia</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="8">0</span><span class="stat-suffix"> Th</span>
+        <span class="stat-label">Pengalaman</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="98">0</span><span class="stat-suffix">%</span>
+        <span class="stat-label">Rating Kepuasan</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="categories-section" id="collection">
+    <div class="section-header">
+      <div class="section-eyebrow">Temukan Gaya Anda</div>
+      <h2 class="section-title">Kategori <em>Pilihan</em></h2>
+    </div>
+    <div class="categories-grid">
+      <div class="cat-card cat-men" onclick="filterProducts('pria')">
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-icon">👞</div>
+          <h3>Pria</h3>
+          <span>120+ Model</span>
+        </div>
+      </div>
+      <div class="cat-card cat-women" onclick="filterProducts('wanita')">
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-icon">👠</div>
+          <h3>Wanita</h3>
+          <span>130+ Model</span>
+        </div>
+      </div>
+      <div class="cat-card cat-sport" onclick="filterProducts('sport')">
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-icon">👟</div>
+          <h3>Sport</h3>
+          <span>80+ Model</span>
+        </div>
+      </div>
+      <div class="cat-card cat-kids" onclick="filterProducts('anak')">
+        <div class="cat-overlay"></div>
+        <div class="cat-content">
+          <div class="cat-icon">🥿</div>
+          <h3>Anak</h3>
+          <span>60+ Model</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PRODUCTS -->
+  <section class="products-section" id="featured">
+    <div class="section-header">
+      <div class="section-eyebrow">Terpilih Untuk Anda</div>
+      <h2 class="section-title">Produk <em>Unggulan</em></h2>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterProducts('semua')">Semua</button>
+      <button class="filter-tab" onclick="filterProducts('pria')">Pria</button>
+      <button class="filter-tab" onclick="filterProducts('wanita')">Wanita</button>
+      <button class="filter-tab" onclick="filterProducts('sport')">Sport</button>
+      <button class="filter-tab" onclick="filterProducts('anak')">Anak</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Generated by JS -->
+    </div>
+  </section>
+
+  <!-- ABOUT / BRAND STORY -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="section-eyebrow">Cerita Kami</div>
+        <h2 class="section-title">Dibangun dengan<br/><em>Passion</em></h2>
+        <p>STEPWISE lahir dari keyakinan bahwa alas kaki bukan sekadar pelindung kaki — melainkan ekspresi diri yang paling jujur. Sejak 2016, kami telah menghadirkan sepatu berkualitas tinggi yang menggabungkan keindahan desain dengan kenyamanan sejati.</p>
+        <p>Setiap pasang sepatu kami dibuat dengan perhatian penuh pada detail, menggunakan material premium pilihan dari seluruh dunia, dan melalui proses quality control yang ketat.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon">🏆</div>
+            <div>
+              <strong>Kualitas Premium</strong>
+              <span>Material pilihan terbaik</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🚚</div>
+            <div>
+              <strong>Free Ongkir</strong>
+              <span>Ke seluruh Indonesia</span>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon">🔄</div>
+            <div>
+              <strong>Easy Return</strong>
+              <span>30 hari garansi pengembalian</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card main-card">
+          <div class="about-shoe-display">
+            <span style="font-size:5rem;">👟</span>
+            <div class="about-badge">Premium</div>
+          </div>
+        </div>
+        <div class="about-card accent-card">
+          <span style="font-size:2rem;">✨</span>
+          <strong>Terpercaya</strong>
+          <span>sejak 2016</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-header">
+      <div class="section-eyebrow">Kata Mereka</div>
+      <h2 class="section-title">Ulasan <em>Pelanggan</em></h2>
+    </div>
+    <div class="testimonials-slider" id="testimonialSlider">
+      <div class="testimonials-track" id="testimonialTrack">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Kualitasnya luar biasa! Sudah pakai selama 6 bulan dan masih seperti baru. Sangat worth it untuk harganya."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">AN</div>
+            <div>
+              <strong>Andi Nugroho</strong>
+              <span>Jakarta</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Pengiriman cepat, packaging rapi, dan sepatu benar-benar sesuai foto. Sudah order 3 kali dan tidak pernah kecewa!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SR</div>
+            <div>
+              <strong>Sari Rahayu</strong>
+              <span>Surabaya</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Paling suka sama desain-desainnya yang elegan tapi tetap nyaman dipakai seharian. Highly recommended!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">BW</div>
+            <div>
+              <strong>Budi Wijaya</strong>
+              <span>Bandung</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★☆</div>
+          <p>"Pelayanan customer service-nya responsif banget. Bantuin milih ukuran yang pas dan prosesnya mudah."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">DP</div>
+            <div>
+              <strong>Dewi Putri</strong>
+              <span>Yogyakarta</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Material kulitnya premium banget, jahitannya rapi. Ini sepatu terbaik yang pernah saya beli!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">RH</div>
+            <div>
+              <strong>Reza Halim</strong>
+              <span>Medan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-controls">
+      <button onclick="slideTestimonial(-1)">←</button>
+      <button onclick="slideTestimonial(1)">→</button>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-section">
+    <div class="newsletter-inner">
+      <div class="newsletter-icon">✉️</div>
+      <h2>Dapatkan <em>Penawaran Eksklusif</em></h2>
+      <p>Daftar sekarang dan dapatkan diskon 15% untuk pembelian pertama Anda</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Masukkan email Anda..." id="emailInput" />
+        <button onclick="subscribeNewsletter()">Daftar</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">STEPWISE</div>
+        <p>Premium footwear untuk jiwa yang berani melangkah maju.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+          <a href="#" aria-label="Facebook">👥</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Toko</h4>
+          <ul>
+            <li><a href="#">Koleksi Pria</a></li>
+            <li><a href="#">Koleksi Wanita</a></li>
+            <li><a href="#">Koleksi Sport</a></li>
+            <li><a href="#">Koleksi Anak</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Layanan</h4>
+          <ul>
+            <li><a href="#">Panduan Ukuran</a></li>
+            <li><a href="#">Cara Pemesanan</a></li>
+            <li><a href="#">Return & Refund</a></li>
+            <li><a href="#">Lacak Pesanan</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>📍 Jl. Malioboro No. 88, Yogyakarta</li>
+            <li>📞 +62 812-3456-7890</li>
+            <li>✉️ hello@stepwise.id</li>
+            <li>🕐 Senin–Sabtu, 09.00–18.00</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 STEPWISE. Semua hak dilindungi.</p>
+      <div class="footer-payment">
+        <span>BCA</span><span>Mandiri</span><span>GoPay</span><span>OVO</span><span>Dana</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Keranjang Belanja</h3>
+      <button onclick="closeCart()" class="btn-icon">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <span>🛒</span>
+        <p>Keranjang masih kosong</p>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">Rp 0</strong>
+      </div>
+      <button class="btn-primary full-width" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal-overlay" id="modalOverlay" onclick="closeModal()"></div>
+  <div class="product-modal" id="productModal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-content" id="modalContent"></div>
+  </div>
+
+  <!-- SEARCH OVERLAY -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-inner">
+      <button class="search-close" onclick="toggleSearch()">✕</button>
+      <input type="text" id="searchInput" placeholder="Cari sepatu..." oninput="searchProducts()" />
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/slider.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
